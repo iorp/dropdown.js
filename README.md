@@ -4,6 +4,8 @@
 
 The Multi-Level Dropdown is a JavaScript-based component that provides a hierarchical menu system with multiple levels of submenus. This component allows you to create interactive dropdown menus with dynamic content.
 
+[Demo](https://iorp.github.io/dropdown.js/demo/)
+[Source](https://github.com/iorp/dropdown.js)
 ## Features
 
 - **Nested Menus:** Create multi-level dropdown menus with nested submenus.
