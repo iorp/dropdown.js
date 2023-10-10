@@ -208,12 +208,3 @@ window[NAMESPACE] ={
 }
 
 
-
-
- if (typeof module !== 'undefined' && module.type === 'module') {
-  // The script has been included as a module
-  console.log('The script is loaded as a module.');
-} else if (typeof jQuery !== 'undefined') {
-  // jQuery is loaded
-  console.log('jQuery is available on this page.');
-} 
