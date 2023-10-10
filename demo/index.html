@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ 
+<link rel="stylesheet" href="../css/dropdown.css"> 
+<script src="../js/dropdown.js"></script> 
+  
+    <title>Multi-Level Dropdown</title>
+  </head>
+  <body>
+      <div style="position:absolute;left:0;top:0">
+      <button id="dropdownelement0"  >Dropdown</button>
+      </div>
+      <div style="position:absolute;right:0;top:0">
+          <button id="dropdownelement1" >Dropdown</button>
+          </div>
+      <div style="position:absolute;left:0;bottom:0">
+              <button id="dropdownelement2" >Dropdown</button>
+          </div>
+          <div style="position:absolute;right:0;bottom:0">
+              <button id="dropdownelement3" >Dropdown</button>
+          </div>
+      <script>
+      
+  
+          const options = {
+           
+              data:[ 
+                  { html: 'a', children: [{ html: 'a.a' }, { html: 'a.b' }] },
+                  {
+                      html: 'b',
+                      children: [
+                          { html: 'b.a' },
+                          { html: 'b.b', children: [{ html: 'b.b.a' }, { html: 'b.b.b' }] },
+                      ],
+                  },
+              ],
+              model: (item) => { return `${item.html}`; }, // optional
+              nodeClick:(e,item,dropdown)=>{// optional
+                console.log(item);
+              }
+          }
+
+          let asyncDataOptions ={
+   nodeClick:(e,item,dropdown)=>{ console.log(e,item,dropdown);    },
+   data:(caller,callback)=>{ 
+ //console.log("Asyncronously get options.data here "); 
+
+     // demo timeout 
+     setTimeout(()=>{
+     let asyncronouslyRetrievedData= [ 
+         { html: 'a', children: [{ html: 'a.a' }, { html: 'a.b' }] },
+         { html: 'b', children: [{ html: 'b.a' }, { html: 'b.b' }] }
+         ];
+     callback(caller, asyncronouslyRetrievedData );
+     },800);
+
+}
+};
+  
+       new window.Dropdown.Plugin(document.querySelector('#dropdownelement0'),options);
+       new window.Dropdown.Plugin(document.querySelector('#dropdownelement1'),options);
+       new window.Dropdown.Plugin(document.querySelector('#dropdownelement2'),options);  
+       new window.Dropdown.Plugin(document.querySelector('#dropdownelement3'),  asyncDataOptions );
+      </script>
+  </body>
+
+</body>
+</html>
+

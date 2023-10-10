@@ -1,0 +1,176 @@
+
+.dropdown-js-menu {
+    list-style: none;
+    padding: 0;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size:85%;
+}
+
+.dropdown-js-item {
+    min-width: 45px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+
+
+
+
+    .dropdown-js-item:hover {
+    background-color: #f1f1f1;
+    color: #333;
+    }
+
+    .dropdown-js-item:active {
+    background-color: blue; /* Change the background color to blue on click */
+    color: white; /* Change the text color to blue on click */
+    }
+
+.dropdown-js-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-js-item.open {
+    background-color: #f0f0f0;
+    color: #333;
+    }
+
+.dropdown-js-sub-menu {
+    display: none;
+    position: absolute;
+    /* top: 0;
+    left: 100%; */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* .dropdown-js-item-link{
+    padding-right:10px;
+} */
+
+.show {
+    display: block;
+}
+
+.dropdown-js-item::before {
+    /* content: '▸'; */
+    position: absolute;
+    /* right: 5px; */
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+
+
+@media (min-width: 600px) {
+
+
+
+
+.dropdown-js-dir-right.dropdown-js-menu{ left:0  }
+.dropdown-js-dir-right * .dropdown-js-sub-menu{ left: 100%;   } 
+.dropdown-js-dir-right.dropdown-js-menu>li::before,
+.dropdown-js-dir-right *  .dropdown-js-item::before {    content: '▸';  right: 5px;   } 
+.dropdown-js-dir-right.dropdown-js-menu>li>a,
+.dropdown-js-dir-right * .dropdown-js-item-link{  padding-right:10px;  }
+
+
+
+.dropdown-js-dir-left.dropdown-js-menu{ right:0  }  
+.dropdown-js-dir-left * .dropdown-js-sub-menu{ left: -100%; }
+.dropdown-js-dir-left.dropdown-js-menu>li::before,
+.dropdown-js-dir-left *  .dropdown-js-item::before {     content: '◂';  left: 5px;    } 
+.dropdown-js-dir-left.dropdown-js-menu>li>a,
+.dropdown-js-dir-left * .dropdown-js-item-link{  padding-left:10px;  }
+
+
+
+.dropdown-js-dir-bottom.dropdown-js-menu{ top:100%;  }
+.dropdown-js-dir-bottom * .dropdown-js-sub-menu{ top:-4% }
+
+.dropdown-js-dir-top.dropdown-js-menu{ bottom:100% ; }
+.dropdown-js-dir-top * .dropdown-js-sub-menu{ top:-106% }
+
+
+.dropdown-js-item.no-children::before {
+    content: '';
+}
+}
+
+
+
+@media (max-width: 599px) {
+
+
+
+.dropdown-js-dir-right.dropdown-js-menu{ left:0  }
+.dropdown-js-dir-right * .dropdown-js-sub-menu{ left: 100%;   } 
+.dropdown-js-dir-right.dropdown-js-menu>li::before,
+ .dropdown-js-dir-right *  .dropdown-js-item::before {       right: 5px;   }   
+.dropdown-js-dir-right.dropdown-js-menu>li>a,
+.dropdown-js-dir-right * .dropdown-js-item-link{  padding-right:10px;  }
+
+
+
+.dropdown-js-dir-left.dropdown-js-menu{ right:0  }  
+.dropdown-js-dir-left * .dropdown-js-sub-menu{ left: -100%; }
+.dropdown-js-dir-left.dropdown-js-menu>li::before,
+  .dropdown-js-dir-left *  .dropdown-js-item::before {     left: 5px;    }   
+.dropdown-js-dir-left.dropdown-js-menu>li>a,
+.dropdown-js-dir-left * .dropdown-js-item-link{  padding-left:10px;  }
+
+
+
+
+.dropdown-js-dir-bottom.dropdown-js-menu{ top:100%;  }
+.dropdown-js-dir-bottom * .dropdown-js-sub-menu{ top:100% }
+.dropdown-js-dir-bottom.dropdown-js-menu>li::before, 
+ .dropdown-js-dir-bottom *  .dropdown-js-item::before {    content: '▾';    }  
+
+.dropdown-js-dir-top.dropdown-js-menu{ bottom:100% ; }
+.dropdown-js-dir-top * .dropdown-js-sub-menu{ top:-206% }
+.dropdown-js-dir-top.dropdown-js-menu>li::before,
+.dropdown-js-dir-top *  .dropdown-js-item::before {    content: '▴';     }  
+
+    /* Add your styles for screens less than 600 pixels here */
+.dropdown-js-sub-menu {
+   width: 100vw!important;
+   
+    left: 0!important;
+    
+}
+
+.dropdown-js-menu{
+    width: 100vw;
+    
+}
+
+
+.dropdown-js-item::before {
+    content: '▾';
+}
+
+.dropdown-js-item.no-children::before {
+    content: '';
+}
+/* .dropdown-js-item {
+text-indent: 10px; 
+} */
+
+
+
+}
